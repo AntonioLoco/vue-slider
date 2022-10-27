@@ -37,7 +37,8 @@ createApp({
                 }
             ],
             currentSlide: 0,
-            autoplay: setInterval(this.nextCard, 3000),
+            autoplay: null,
+            classHover: ""
         }
     },
     methods: {
@@ -56,16 +57,17 @@ createApp({
             }
         },
         stopAutoplay: function() {
-            console.log("dentro");
+            this.classHover = "hover";
             clearInterval(this.autoplay);
+            this.autoplay = null;
         },
         startAutoplay: function(){
-            console.log("fuori");
+            this.classHover = "";
             this.autoplay = setInterval(this.nextCard, 3000);
         }
     },
     created: function(){
-        this.autoplay;
+        this.startAutoplay();
     }
 }).mount("#app");
 
