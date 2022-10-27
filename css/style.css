@@ -17,12 +17,12 @@
     height: 300px;
     position: relative;
     transform: scale(1);
-    transition: transform 1s linear;
+    z-index: 999;
+    transition: all 1s linear;
 }
 
 .item.hover{
     transform: scale(1.5);
-    z-index: 999;
 }
 
 .item img {

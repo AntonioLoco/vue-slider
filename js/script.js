@@ -62,8 +62,10 @@ createApp({
             this.autoplay = null;
         },
         startAutoplay: function(){
-            this.classHover = "";
-            this.autoplay = setInterval(this.nextCard, 3000);
+            if(this.autoplay === null){
+                this.classHover = "";
+                this.autoplay = setInterval(this.nextCard, 3000);
+            }
         }
     },
     created: function(){
